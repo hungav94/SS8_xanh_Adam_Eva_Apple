@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam Eva - Apple</title>
+    <script src="Apple.js"></script>
+    <script src="Human.js"></script>
+</head>
+<body>
+<div>
+    <h1>Apple</h1>
+    <input type="button" onclick="checkApple(apple)" value="Check Apple">
+</div>
+<div>
+    <h1>Adam</h1>
+    <input type="button" onclick="eat(adam,apple)" value="Ăn">
+    <input type="button" onclick="checkHuman(adam)" value="Kiểm tra cân nặng">
+</div>
+<div>
+    <h1>Eva</h1>
+    <input type="button" onclick="eat(eva,apple)" value="Ăn">
+    <input type="button" onclick="checkHuman(eva)" value="Kiểm tra cân nặng">
+</div>
+
+<script>
+    let apple = new Apple(10);
+    let adam = new Human('Adam', true, 20);
+    let eva = new Human('Eva', false, 20);
+
+    function checkApple(apple) {
+        alert('Táo còn ' + apple.getWeight());
+    }
+
+    function eat(human, apple) {
+        human.eat(apple);
+    }
+
+    function checkHuman(human) {
+        alert(human.getName() + ' nặng ' + human.getWeight());
+    }
+</script>
+</body>
+</html>
